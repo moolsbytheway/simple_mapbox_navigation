@@ -2,7 +2,13 @@
     <application
         android:label="mapbox_navigation_example"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme"
+        >
+        <activity
+            android:name="com.pmcode.mapbox_navigation.TurnByTurnExperienceActivity"
+            android:label="TurnByTurnExperienceActivity">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -1,18 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is off -->
-    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
-        <!-- Show a splash screen on the activity. Automatically removed when
-             the Flutter engine draws its first frame -->
-        <item name="android:windowBackground">@drawable/launch_background</item>
-    </style>
-    <!-- Theme applied to the Android Window as soon as the process has started.
-         This theme determines the color of the Android Window while your
-         Flutter UI initializes, as well as behind your Flutter UI while its
-         running.
+  <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is off -->
+  <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+    <!-- Show a splash screen on the activity. Automatically removed when
+         the Flutter engine draws its first frame -->
+    <item name="android:windowBackground">@drawable/launch_background</item>
+  </style>
+  <!-- Theme applied to the Android Window as soon as the process has started.
+       This theme determines the color of the Android Window while your
+       Flutter UI initializes, as well as behind your Flutter UI while its
+       running.
 
-         This Theme is only used starting with V2 of Flutter's Android embedding. -->
-    <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
-        <item name="android:windowBackground">?android:colorBackground</item>
-    </style>
+       This Theme is only used starting with V2 of Flutter's Android embedding. -->
+  <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+    <item name="android:windowBackground">?android:colorBackground</item>
+  </style>
+
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <item name="windowNoTitle">true</item>
+    <item name="android:windowNoTitle">true</item>
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+  </style>
+
+  <style name="MapboxCustomTripProgressStyle" parent="MapboxStyleTripProgressView">
+    <item name="tripProgressTextColor">#7B3CEA</item>
+    <item name="tripProgressViewBackgroundColor">#EEEEEE</item>
+  </style>
+
+  <style name="MapboxCustomManeuverTurnIconStyle" parent="MapboxStyleTurnIconManeuver">
+    <item name="maneuverTurnIconColor">#FFEB3B</item>
+    <item name="maneuverTurnIconShadowColor">#7A6E03</item>
+  </style>
+
+  <style name="MapboxCustomManeuverStyle" parent="MapboxStyleManeuverView">
+    <item name="maneuverViewBackgroundColor">#058A0A</item>
+    <item name="subManeuverViewBackgroundColor">#046808</item>
+    <item name="upcomingManeuverViewBackgroundColor">#046808</item>
+    <item name="maneuverViewIconStyle">@style/MapboxCustomManeuverTurnIconStyle</item>
+    <item name="laneGuidanceManeuverIconStyle">@style/MapboxCustomManeuverTurnIconStyle</item>
+  </style>
+
 </resources>

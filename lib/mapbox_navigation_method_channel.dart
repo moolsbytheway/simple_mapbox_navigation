@@ -10,8 +10,7 @@ class MethodChannelMapboxNavigation extends MapboxNavigationPlatform {
   final methodChannel = const MethodChannel('mapbox_navigation');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
+  Future<void> startActivity() async {
+    await methodChannel.invokeMethod<String>('startActivity');
   }
 }

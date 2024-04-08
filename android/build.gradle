@@ -18,6 +18,16 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = "mapbox"
+                password = project.hasProperty('MAPBOX_DOWNLOADS_TOKEN') ? project.property('MAPBOX_DOWNLOADS_TOKEN') : System.getenv('MAPBOX_DOWNLOADS_TOKEN')
+            }
+        }
     }
 }
 
@@ -40,13 +50,18 @@ android {
         jvmTarget = '1.8'
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
     }
 
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 21
+        multiDexEnabled true
     }
 
     dependencies {
@@ -65,4 +80,23 @@ android {
             }
         }
     }
+}
+
+dependencies {
+    // Mapbox Navigation SDK
+    implementation "com.mapbox.navigation:android:2.10.1"
+    implementation "com.mapbox.navigation:ui-dropin:2.10.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.21"
+    implementation "androidx.core:core-ktx:1.9.0"
+    implementation "com.google.android.material:material:1.7.0"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation "androidx.appcompat:appcompat:1.5.1"
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    implementation "com.google.android.gms:play-services-location:20.0.0"
+    implementation "com.squareup.leakcanary:leakcanary-android:2.9.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+
 }

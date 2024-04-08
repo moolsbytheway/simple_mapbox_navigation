@@ -23,7 +23,7 @@ abstract class MapboxNavigationPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+  Future<void> startActivity() {
+    throw UnimplementedError('startActivity() has not been implemented.');
   }
 }

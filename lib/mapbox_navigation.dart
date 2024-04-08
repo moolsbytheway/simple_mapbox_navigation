@@ -1,8 +1,8 @@
 
-import 'mapbox_navigation_platform_interface.dart';
+import 'package:mapbox_navigation/mapbox_navigation_platform_interface.dart';
 
 class MapboxNavigation {
-  Future<String?> getPlatformVersion() {
-    return MapboxNavigationPlatform.instance.getPlatformVersion();
+  Future<void> startActivity() {
+    return MapboxNavigationPlatform.instance.startActivity();
   }
 }
