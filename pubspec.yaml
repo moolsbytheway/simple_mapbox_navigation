@@ -10,9 +10,9 @@ environment:
 
 screenshots:
   - description: 'iOS'
-    path: https://raw.githubusercontent.com/moolsbytheway/simple_mapbox_navigation/main/screenshots/ios.webp
+    path: screenshots/ios.webp
   - description: 'Android'
-    path: https://raw.githubusercontent.com/moolsbytheway/simple_mapbox_navigation/main/screenshots/android.webp
+    path: screenshots/android.webp
 
 platforms:
   android:
