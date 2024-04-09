@@ -6,7 +6,7 @@ Simple mapbox navigation UI (Still WIP)
 Add Turn By Turn Navigation to Your Flutter Application Using MapBox. Never leave your app when you need to navigate your users to a location.
 
 # Screenshots
-<img src="screenshots/ios.webp?raw=true" alt="Navigation View" title="iOS" width="300"> | <img src="screenshots/android.webp?raw=true" alt="Android View" title="Android" width="300">
+<img src="https://github.com/moolsbytheway/simple_mapbox_navigation/tree/main/screenshots/ios.webp?raw=true" alt="Navigation View" title="iOS" width="300"> | <img src="https://github.com/moolsbytheway/simple_mapbox_navigation/tree/main/screenshots/android.webp?raw=true" alt="Android View" title="Android" width="300">
 
 ## Features
 
