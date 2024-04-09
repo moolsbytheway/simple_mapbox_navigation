@@ -1,13 +1,12 @@
 name: simple_mapbox_navigation
 description: "Simple mapbox navigation UI"
 version: 0.1.0
-homepage: https://github.com/moolsbytheway/simple_mapbox_navigation
+homepage: https://camelcodes.net
+repository: https://github.com/moolsbytheway/simple_mapbox_navigation
 
 environment:
   sdk: '>=3.3.3 <4.0.0'
   flutter: '>=3.3.0'
-
-publish_to: none
 
 screenshots:
   - description: 'iOS'
