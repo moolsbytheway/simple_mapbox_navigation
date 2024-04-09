@@ -21,12 +21,12 @@ class SimpleMapboxNavigationPlugin : FlutterPlugin, MethodChannel.MethodCallHand
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
         when (call.method) {
             "startNavigation" -> {
-                val start_lat = call.argument<Double>("start_lat")
-                val start_lng = call.argument<Double>("start_lng")
-                val end_lat = call.argument<Double>("end_lat")
-                val end_lng = call.argument<Double>("end_lng")
-                if (start_lat != null && start_lng != null && end_lat != null && end_lng != null) {
-                    startNavigation(TurnByTurnExperienceActivity::class.java, start_lat, start_lng,end_lat,end_lng)
+                val startLat = call.argument<Double>("startLat")
+                val startLng = call.argument<Double>("startLng")
+                val endLat = call.argument<Double>("endLat")
+                val endLng = call.argument<Double>("endLng")
+                if (startLat != null && startLng != null && endLat != null && endLng != null) {
+                    startNavigation(TurnByTurnExperienceActivity::class.java, startLat, startLng,endLat,endLng)
                     result.success(null)
                 } else {
                     result.error("MISSING_ARGUMENTS", "Latitude or longitude missing", null)
@@ -37,12 +37,12 @@ class SimpleMapboxNavigationPlugin : FlutterPlugin, MethodChannel.MethodCallHand
         }
     }
 
-    private fun startNavigation(activityClass: Class<*>, start_lat: Double, start_lng: Double,end_lat: Double,end_lng: Double) {
+    private fun startNavigation(activityClass: Class<*>, startLat: Double, startLng: Double,endLat: Double,endLng: Double) {
         val intent = Intent(context, activityClass)
-        intent.putExtra("start_lat", start_lat)
-        intent.putExtra("start_lng", start_lng)
-        intent.putExtra("end_lat", end_lat)
-        intent.putExtra("end_lng", end_lng)
+        intent.putExtra("startLat", startLat)
+        intent.putExtra("startLng", startLng)
+        intent.putExtra("endLat", endLat)
+        intent.putExtra("endLng", endLng)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         context.startActivity(intent)
     }

@@ -1,6 +1,6 @@
 name: simple_mapbox_navigation
-description: "Simple mapbox navigation UI"
-version: 0.1.4
+description: "Simple mapbox navigation UI. Add Turn By Turn Navigation to Your Flutter Application Using MapBox. Never leave your app when you need to navigate your users to a location"
+version: 0.2.0
 homepage: https://camelcodes.net
 repository: https://github.com/moolsbytheway/simple_mapbox_navigation
 

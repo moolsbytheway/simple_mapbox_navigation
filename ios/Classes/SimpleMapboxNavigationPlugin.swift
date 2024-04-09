@@ -17,11 +17,11 @@ public class SimpleMapboxNavigationPlugin: NSObject, FlutterPlugin {
        switch call.method {
        case "startNavigation":
         if let args = call.arguments as? Dictionary<String, Any>,
-            let start_lat = args["start_lat"] as? Double,
-            let start_lng = args["start_lng"] as? Double,
-            let end_lat = args["end_lat"] as? Double,
-            let end_lng = args["end_lng"] as? Double {
-             startNavigation(start_lat: start_lat, start_lng: start_lng, end_lat: end_lat, end_lng: end_lng)
+            let startLat = args["startLat"] as? Double,
+            let startLng = args["startLng"] as? Double,
+            let endLat = args["endLat"] as? Double,
+            let endLng = args["endLng"] as? Double {
+             startNavigation(startLat: startLat, startLng: startLng, endLat: endLat, endLng: endLng)
                result(nil)
          } else {
                result(FlutterError(code: "INVALID_ARGUMENTS", message: "Invalid arguments", details: nil))
@@ -32,11 +32,11 @@ public class SimpleMapboxNavigationPlugin: NSObject, FlutterPlugin {
      }
     
     
-    private func startNavigation(start_lat: Double, start_lng: Double, end_lat: Double, end_lng: Double) {
+    private func startNavigation(startLat: Double, startLng: Double, endLat: Double, endLng: Double) {
         
         // Define two waypoints to travel between
-        let origin = Waypoint(coordinate: CLLocationCoordinate2D(latitude: start_lat, longitude: start_lng), name: "Start")
-        let destination = Waypoint(coordinate: CLLocationCoordinate2D(latitude: end_lat, longitude: end_lng), name: "Target")
+        let origin = Waypoint(coordinate: CLLocationCoordinate2D(latitude: startLat, longitude: startLng), name: "Start")
+        let destination = Waypoint(coordinate: CLLocationCoordinate2D(latitude: endLat, longitude: endLng), name: "Target")
 
         // Set options
         let routeOptions = NavigationRouteOptions(waypoints: [origin, destination])

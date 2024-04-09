@@ -517,14 +517,14 @@ class TurnByTurnExperienceActivity : AppCompatActivity() {
         routeArrowView = MapboxRouteArrowView(routeArrowOptions)
 
 
-        val start_lat = intent.getDoubleExtra("start_lat", 0.0)
-        val start_lng = intent.getDoubleExtra("start_lng", 0.0)
-        val end_lat = intent.getDoubleExtra("end_lat", 0.0)
-        val end_lng = intent.getDoubleExtra("end_lng", 0.0)
+        val startLat = intent.getDoubleExtra("startLat", 0.0)
+        val startLng = intent.getDoubleExtra("startLng", 0.0)
+        val endLat = intent.getDoubleExtra("endLat", 0.0)
+        val endLng = intent.getDoubleExtra("endLng", 0.0)
 
 
-        val origin = Point.fromLngLat(start_lng, start_lat)
-        val destination = Point.fromLngLat(end_lng, end_lat)
+        val origin = Point.fromLngLat(startLng, startLat)
+        val destination = Point.fromLngLat(endLng, endLat)
 
         // load map style
         binding.mapView.getMapboxMap().loadStyleUri(NavigationStyles.NAVIGATION_DAY_STYLE) {
