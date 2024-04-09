@@ -1,6 +1,6 @@
 name: simple_mapbox_navigation
 description: "Simple mapbox navigation UI"
-version: 0.0.2
+version: 0.1.0
 homepage: https://github.com/moolsbytheway/simple_mapbox_navigation
 
 environment:
@@ -10,14 +10,20 @@ environment:
 publish_to: none
 
 screenshots:
-  - description: 'Android '
-    path: path/to/image/in/package/500x500.webp
   - description: 'iOS'
-    path: path/to/image/in/package.png
+    path: https://raw.githubusercontent.com/moolsbytheway/simple_mapbox_navigation/main/screenshots/ios.webp
+  - description: 'Android'
+    path: https://raw.githubusercontent.com/moolsbytheway/simple_mapbox_navigation/main/screenshots/android.webp
 
 platforms:
   android:
   ios:
+
+topics:
+  - maps
+  - http
+  - mapbox
+  - navigation
 
 dependencies:
   flutter:
