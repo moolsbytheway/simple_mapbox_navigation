@@ -22,13 +22,18 @@ class _MyAppState extends State<MyApp> {
         home: Scaffold(
             appBar: AppBar(title: const Text('Mapbox navigation launcher')),
             body: Center(
-                child: ElevatedButton(
-                          onPressed: _openMap,
-                          child: const Text("Open map"),
-                        ))));
+                child: Column(children: [
+              const Text("From: 33.605917, -7.520119"),
+              const Text("To: 33.607320, -7.516551"),
+              ElevatedButton(
+                onPressed: _openMap,
+                child: const Text("Open map"),
+              )
+            ]))));
   }
 
   void _openMap() {
-    mapBoxNavigation.startActivity();
+    mapBoxNavigation.startNavigation(
+        33.605917, -7.520119, 33.607320, -7.516551);
   }
 }

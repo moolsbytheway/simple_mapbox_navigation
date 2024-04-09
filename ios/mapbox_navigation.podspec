@@ -5,9 +5,9 @@
 Pod::Spec.new do |s|
   s.name             = 'mapbox_navigation'
   s.version          = '0.0.1'
-  s.summary          = 'A new Flutter plugin project.'
+  s.summary          = 'Simple mapbox navigation UI'
   s.description      = <<-DESC
-A new Flutter plugin project.
+Simple mapbox navigation UI
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }

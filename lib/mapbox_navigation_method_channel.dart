@@ -10,7 +10,14 @@ class MethodChannelMapboxNavigation extends MapboxNavigationPlatform {
   final methodChannel = const MethodChannel('mapbox_navigation');
 
   @override
-  Future<void> startActivity() async {
-    await methodChannel.invokeMethod<String>('startActivity');
+  Future<void> startNavigation(double start_lat, double start_lng,
+      double end_lat, double end_lng) async {
+    await methodChannel
+        .invokeMethod<String>('startNavigation', <String, dynamic>{
+      "start_lat": start_lat,
+      "start_lng": start_lng,
+      "end_lat": end_lat,
+      "end_lng": end_lng
+    });
   }
 }

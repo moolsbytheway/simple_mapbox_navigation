@@ -516,13 +516,25 @@ class TurnByTurnExperienceActivity : AppCompatActivity() {
         val routeArrowOptions = RouteArrowOptions.Builder(this).build()
         routeArrowView = MapboxRouteArrowView(routeArrowOptions)
 
+
+        val start_lat = intent.getDoubleExtra("start_lat", 0.0)
+        val start_lng = intent.getDoubleExtra("start_lng", 0.0)
+        val end_lat = intent.getDoubleExtra("end_lat", 0.0)
+        val end_lng = intent.getDoubleExtra("end_lng", 0.0)
+
+
+        val origin = Point.fromLngLat(start_lng, start_lat)
+        val destination = Point.fromLngLat(end_lng, end_lat)
+
         // load map style
         binding.mapView.getMapboxMap().loadStyleUri(NavigationStyles.NAVIGATION_DAY_STYLE) {
+
+            findRoute(origin, destination);
             // add long click listener that search for a route to the clicked destination
-            binding.mapView.gestures.addOnMapLongClickListener { point ->
+            /*binding.mapView.gestures.addOnMapLongClickListener { point ->
                 findRoute(point)
                 true
-            }
+            }*/
         }
 
         // initialize view interactions
@@ -561,7 +573,7 @@ class TurnByTurnExperienceActivity : AppCompatActivity() {
             NavigationOptions.Builder(this)
                 .accessToken(getString(R.string.mapbox_access_token))
                 // comment out the location engine setting block to disable simulation
-                .locationEngine(replayLocationEngine)
+                //.locationEngine(replayLocationEngine)
                 .build()
         )
 
@@ -585,7 +597,7 @@ class TurnByTurnExperienceActivity : AppCompatActivity() {
             listOf(
                 ReplayRouteMapper.mapToUpdateLocation(
                     Date().time.toDouble(),
-                    Point.fromLngLat(-122.39726512303575, 37.785128345296805)
+                    Point.fromLngLat(0.0,0.0)
                 )
             )
         )
@@ -593,11 +605,11 @@ class TurnByTurnExperienceActivity : AppCompatActivity() {
         mapboxReplayer.playbackSpeed(3.0)
     }
 
-    private fun findRoute(destination: Point) {
-        val originLocation = navigationLocationProvider.lastLocation
+    private fun findRoute(origin: Point, destination: Point) {
+         val originLocation = navigationLocationProvider.lastLocation
         val originPoint = originLocation?.let {
-            Point.fromLngLat(it.longitude, it.latitude)
-        } ?: return
+             Point.fromLngLat(it.longitude, it.latitude)
+         } ?: return
 
         // execute a route request
         // it's recommended to use the
@@ -608,7 +620,7 @@ class TurnByTurnExperienceActivity : AppCompatActivity() {
             RouteOptions.builder()
                 .applyDefaultNavigationOptions()
                 .applyLanguageAndVoiceUnitOptions(this)
-                .coordinatesList(listOf(originPoint, destination))
+                .coordinatesList(listOf(origin, destination))
                 // provide the bearing for the origin of the request to ensure
                 // that the returned route faces in the direction of the current user movement
                 .bearingsList(
@@ -624,11 +636,11 @@ class TurnByTurnExperienceActivity : AppCompatActivity() {
                 .build(),
             object : NavigationRouterCallback {
                 override fun onCanceled(routeOptions: RouteOptions, routerOrigin: RouterOrigin) {
-                    // no impl
+                    onDestroy();
                 }
 
                 override fun onFailure(reasons: List<RouterFailure>, routeOptions: RouteOptions) {
-                    // no impl
+                    onDestroy();
                 }
 
                 override fun onRoutesReady(
@@ -667,5 +679,6 @@ class TurnByTurnExperienceActivity : AppCompatActivity() {
         binding.maneuverView.visibility = View.INVISIBLE
         binding.routeOverview.visibility = View.INVISIBLE
         binding.tripProgressCard.visibility = View.INVISIBLE
+        finishAndRemoveTask()
     }
 }

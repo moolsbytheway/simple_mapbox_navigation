@@ -23,7 +23,7 @@ abstract class MapboxNavigationPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<void> startActivity() {
-    throw UnimplementedError('startActivity() has not been implemented.');
+  Future<void> startNavigation(double start_lat, double  start_lng, double  end_lat, double end_lng) {
+    throw UnimplementedError('startNavigation() has not been implemented.');
   }
 }
