@@ -1,12 +1,11 @@
 # simple_mapbox_navigation
 
-Simple mapbox navigation UI (Still WIP)
+Simple mapbox navigation UI (Still WIP, adding latest touches)
 
-## Getting Started
 Add Turn By Turn Navigation to Your Flutter Application Using MapBox. Never leave your app when you need to navigate your users to a location.
 
 # Screenshots
-<img src="https://github.com/moolsbytheway/simple_mapbox_navigation/tree/main/screenshots/ios.webp?raw=true" alt="Navigation View" title="iOS" width="300"> | <img src="https://github.com/moolsbytheway/simple_mapbox_navigation/tree/main/screenshots/android.webp?raw=true" alt="Android View" title="Android" width="300">
+<img src="https://raw.githubusercontent.com/moolsbytheway/simple_mapbox_navigation/main/screenshots/ios.webp" alt="Navigation View" title="iOS" width="300"> | <img src="https://raw.githubusercontent.com/moolsbytheway/simple_mapbox_navigation/main/screenshots/android.webp" alt="Android View" title="Android" width="300">
 
 ## Features
 
@@ -66,5 +65,66 @@ After adding the above, your gradle.properties file may look something like this
 org.gradle.jvmargs=-Xmx1536M
 android.useAndroidX=true
 android.enableJetifier=true
-MAPBOX_DOWNLOADS_TOKEN=sk.epe9nE9peAcmwNzKVNqSbFfp2794YtnNepe9nE9peAcmwNzKVNqSbFfp2794YtnN.-HrbMMQmLdHwYb8r
+MAPBOX_DOWNLOADS_TOKEN=[[YOUR_MAPBOX_SECREY_KEY]]
+```
+
+
+## Getting Started
+
+Usage is simple as calling the method `startNavigation` with the origin and destination coordinates.
+The Mapbox turn by turn navigation will open in full screen; when closed it will come back to your main activity.
+
+- Initialize the plugin
+
+```dart
+  final mapBoxNavigation = MapboxNavigation();
+```
+
+- Launch the map
+
+```dart
+  mapBoxNavigation.startNavigation(origin_latitude, origin_longitude, target_latitude, target_longitude)
+```
+
+## Example
+```dart
+import 'package:flutter/material.dart';
+
+import 'package:simple_mapbox_navigation/simple_mapbox_navigation.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final mapBoxNavigation = MapboxNavigation();
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(title: const Text('Mapbox navigation launcher')),
+            body: Center(
+                child: Column(children: [
+              const Text("From: 33.605917, -7.520119"),
+              const Text("To: 33.607320, -7.516551"),
+              ElevatedButton(
+                onPressed: _openMap,
+                child: const Text("Open map"),
+              )
+            ]))));
+  }
+
+  void _openMap() {
+    mapBoxNavigation.startNavigation(
+        33.605917, -7.520119, 33.607320, -7.516551);
+  }
+}
 ```
