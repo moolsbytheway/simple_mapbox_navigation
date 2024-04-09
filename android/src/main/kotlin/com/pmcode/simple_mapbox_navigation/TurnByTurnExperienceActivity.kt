@@ -1,4 +1,4 @@
-package com.pmcode.mapbox_navigation
+package com.pmcode.simple_mapbox_navigation
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -70,7 +70,7 @@ import com.mapbox.navigation.ui.voice.model.SpeechAnnouncement
 import com.mapbox.navigation.ui.voice.model.SpeechError
 import com.mapbox.navigation.ui.voice.model.SpeechValue
 import com.mapbox.navigation.ui.voice.model.SpeechVolume
-import com.pmcode.mapbox_navigation.databinding.MapboxActivityTurnByTurnExperienceBinding
+import com.pmcode.simple_mapbox_navigation.databinding.MapboxActivityTurnByTurnExperienceBinding
 import java.util.Date
 import java.util.Locale
 

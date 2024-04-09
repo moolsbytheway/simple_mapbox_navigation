@@ -1,6 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'mapbox_navigation_method_channel.dart';
+import 'simple_mapbox_navigation_method_channel.dart';
 
 abstract class MapboxNavigationPlatform extends PlatformInterface {
   /// Constructs a MapboxNavigationPlatform.

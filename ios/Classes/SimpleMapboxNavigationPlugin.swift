@@ -4,11 +4,11 @@ import MapboxDirections
 import MapboxCoreNavigation
 import MapboxNavigation
 
-public class MapboxNavigationPlugin: NSObject, FlutterPlugin {
+public class SimpleMapboxNavigationPlugin: NSObject, FlutterPlugin {
     
     public static func register(with registrar: FlutterPluginRegistrar) {
-      let channel = FlutterMethodChannel(name: "mapbox_navigation", binaryMessenger: registrar.messenger())
-      let instance = MapboxNavigationPlugin()
+      let channel = FlutterMethodChannel(name: "simple_mapbox_navigation", binaryMessenger: registrar.messenger())
+      let instance = SimpleMapboxNavigationPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel);
         
     }

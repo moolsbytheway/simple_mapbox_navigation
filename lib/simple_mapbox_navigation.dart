@@ -1,4 +1,4 @@
-import 'package:mapbox_navigation/mapbox_navigation_platform_interface.dart';
+import 'package:simple_mapbox_navigation/simple_mapbox_navigation_platform_interface.dart';
 
 class MapboxNavigation {
   Future<void> startNavigation(double start_lat, double start_lng, double end_lat, double end_lng) {

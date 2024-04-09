@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint mapbox_navigation.podspec` to validate before publishing.
+# Run `pod lib lint simple_mapbox_navigation.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'mapbox_navigation'
+  s.name             = 'simple_mapbox_navigation'
   s.version          = '0.0.1'
   s.summary          = 'Simple mapbox navigation UI'
   s.description      = <<-DESC

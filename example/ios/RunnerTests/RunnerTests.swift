@@ -2,7 +2,7 @@ import Flutter
 import UIKit
 import XCTest
 
-@testable import mapbox_navigation
+@testable import simple_mapbox_navigation
 
 // This demonstrates a simple unit test of the Swift portion of this plugin's implementation.
 //
@@ -11,7 +11,7 @@ import XCTest
 class RunnerTests: XCTestCase {
 
   func testGetPlatformVersion() {
-    let plugin = MapboxNavigationPlugin()
+    let plugin = SimpleMapboxNavigationPlugin()
 
     let call = FlutterMethodCall(methodName: "getPlatformVersion", arguments: [])
 

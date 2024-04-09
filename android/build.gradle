@@ -1,4 +1,4 @@
-group 'com.pmcode.mapbox_navigation'
+group 'com.pmcode.simple_mapbox_navigation'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -36,7 +36,7 @@ apply plugin: 'kotlin-android'
 
 android {
     if (project.android.hasProperty("namespace")) {
-        namespace 'com.pmcode.mapbox_navigation'
+        namespace 'com.pmcode.simple_mapbox_navigation'
     }
 
     compileSdk 34

@@ -1,4 +1,4 @@
-package com.pmcode.mapbox_navigation
+package com.pmcode.simple_mapbox_navigation
 
 import android.content.Context
 import android.content.Intent
@@ -7,14 +7,14 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 
 
-class MapboxNavigationPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
+class SimpleMapboxNavigationPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
 
     private lateinit var channel: MethodChannel
     private lateinit var context: Context
 
     override fun onAttachedToEngine(binding: FlutterPlugin.FlutterPluginBinding) {
         context = binding.applicationContext
-        channel = MethodChannel(binding.binaryMessenger, "mapbox_navigation")
+        channel = MethodChannel(binding.binaryMessenger, "simple_mapbox_navigation")
         channel.setMethodCallHandler(this)
     }
 

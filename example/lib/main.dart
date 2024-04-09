@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:mapbox_navigation/mapbox_navigation.dart';
+import 'package:simple_mapbox_navigation/simple_mapbox_navigation.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,4 +1,4 @@
-package com.pmcode.mapbox_navigation_example
+package com.pmcode.simple_mapbox_navigation_example
 
 import io.flutter.embedding.android.FlutterActivity
 

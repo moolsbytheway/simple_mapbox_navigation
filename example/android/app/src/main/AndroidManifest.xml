@@ -6,7 +6,7 @@
         android:theme="@style/AppTheme"
         >
         <activity
-            android:name="com.pmcode.mapbox_navigation.TurnByTurnExperienceActivity"
+            android:name="com.pmcode.simple_mapbox_navigation.TurnByTurnExperienceActivity"
             android:label="TurnByTurnExperienceActivity">
         </activity>
         <activity

@@ -1,11 +1,23 @@
-name: mapbox_navigation
+name: simple_mapbox_navigation
 description: "Simple mapbox navigation UI"
-version: 0.0.1
-homepage:
+version: 0.0.2
+homepage: https://github.com/moolsbytheway/simple_mapbox_navigation
 
 environment:
   sdk: '>=3.3.3 <4.0.0'
   flutter: '>=3.3.0'
+
+publish_to: none
+
+screenshots:
+  - description: 'Android '
+    path: path/to/image/in/package/500x500.webp
+  - description: 'iOS'
+    path: path/to/image/in/package.png
+
+platforms:
+  android:
+  ios:
 
 dependencies:
   flutter:
@@ -35,10 +47,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.pmcode.mapbox_navigation
-        pluginClass: MapboxNavigationPlugin
+        package: com.pmcode.simple_mapbox_navigation
+        pluginClass: SimpleMapboxNavigationPlugin
       ios:
-        pluginClass: MapboxNavigationPlugin
+        pluginClass: SimpleMapboxNavigationPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

@@ -1,6 +1,6 @@
 # mapbox_navigation_example
 
-Demonstrates how to use the mapbox_navigation plugin.
+Demonstrates how to use the simple_mapbox_navigation plugin.
 
 ## Getting Started
 
